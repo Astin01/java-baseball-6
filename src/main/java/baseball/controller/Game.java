@@ -5,7 +5,6 @@ import baseball.model.Referee;
 import baseball.model.User;
 import baseball.view.InputView;
 import baseball.view.OutputView;
-import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
 
 public class Game {
@@ -23,11 +22,8 @@ public class Game {
 
     private void playSetting() {
         computer.generateNumbers();
-
-        System.out.println("숫자 야구 게임을 시작합니다.");
-        System.out.println("숫자를 입력해주세요 : ");
-        String inputValue = Console.readLine();
-
+        inputView.showGameStart();
+        String inputValue = inputView.showUserInputBanner();
         user  = new User(inputValue);
     }
 
